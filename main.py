@@ -1,22 +1,11 @@
 import telebot
 from telebot import types
 import random
-from api_keys import telegram_bot_key
-
-
-class Keys:
-    def __init__(self):
-        # key of your own telegram bot
-        self.__telebot_key = telegram_bot_key
-
-    @property
-    def get_telebot_key(self):
-        return self.__telebot_key
+from api_keys import telegram_bot_key  # your own token
 
 
 keys = Keys()
-telebot_key = keys.get_telebot_key
-bot = telebot.TeleBot(telebot_key)
+bot = telebot.TeleBot(telegram_bot_key)
 
 
 @bot.message_handler(commands=["start"])
